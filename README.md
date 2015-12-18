@@ -1,2 +1,2 @@
 # new-year
-Hobby project of creating gmae using Java SE
+Hobby project of creating game using Java SE
