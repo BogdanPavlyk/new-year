@@ -11,9 +11,25 @@ import java.io.*;
  */
 public class Field extends JPanel
 {
+        private Image hat;
+        private Image background;
+        public int HAT_COORDINATE = 380;
+                
         /** Class  Constructor */
         public Field()
         {
+                try
+                {
+                        hat = ImageIO.read(new File("c:\\img\\shapka.png"));
+                }
+                catch(IOException ex){}
+                
+                try
+                {
+                        background = ImageIO.read(new File("c:\\img\\fon.png"));
+                }
+                catch(IOException ex){}
+                
                 /**
                  * Create a timer that will redraw the playing field
                  * 20 times a second
@@ -33,6 +49,11 @@ public class Field extends JPanel
         * @param gr 
         */        
         @Override
-        public void paintComponent(Graphics gr){}
+        public void paintComponent(Graphics gr)
+        {
+                super.paintComponent(gr);
+                gr.drawImage(background, 0, 0, null);
+                gr.drawImage(hat, HAT_COORDINATE, 465, null);       
+        }
     
 }
