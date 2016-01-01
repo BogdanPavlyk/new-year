@@ -13,7 +13,7 @@ public class Field extends JPanel
 {
         private Image hat;
         private Image background;
-        public int HAT_COORDINATE = 380;
+        public int hatCoord = 380;
                 
         /** Class  Constructor */
         public Field()
@@ -35,7 +35,6 @@ public class Field extends JPanel
                  * 20 times a second
                  */
                  Timer timerDraw = new Timer(50, new ActionListener(){
-                     @Override
                      public void actionPerformed(ActionEvent ae){
                          repaint();
                      }
@@ -53,7 +52,7 @@ public class Field extends JPanel
         {
                 super.paintComponent(gr);
                 gr.drawImage(background, 0, 0, null);
-                gr.drawImage(hat, HAT_COORDINATE, 465, null);       
+                gr.drawImage(hat, hatCoord, 465, null);       
         }
-    
+        
 }

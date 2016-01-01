@@ -1,6 +1,9 @@
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
+import static java.awt.event.KeyEvent.VK_ESCAPE;
+import static java.awt.event.KeyEvent.VK_LEFT;
+import static java.awt.event.KeyEvent.VK_RIGHT;
 
 /**
  * Class of the window, that holds game-field
@@ -17,16 +20,34 @@ public class Window extends JFrame
         private class MyKey implements KeyListener
         {
                 /** A method that is triggered by pressing the key */
-                public void KeyPressed(KeyEvent ke)
+                public void keyPressed(KeyEvent ke)
                 {
                         /** Obtain the code of the pressed key */
                         int key_= ke.getKeyCode();
+                        switch (key_) {
+                                case VK_ESCAPE:
+                                        System.exit(0);
+                        //if pressed left arrow key
+                                case VK_LEFT:
+                                        if(gameField.hatCoord - 30 > -48)
+                                                gameField.hatCoord -= 30;
+                                        else gameField.hatCoord = 752;
+                                        break;
+                        //if pressed right arrow key
+                                case VK_RIGHT:
+                                        if(gameField.hatCoord + 30 < 752)
+                                                gameField.hatCoord += 30;
+                                        else gameField.hatCoord = -48;
+                                        break;
+                                default:
+                                        break;
+                        }
                 }
         
                 @Override
                 public void keyReleased(KeyEvent ke){}
+                @Override
                 public void keyTyped(KeyEvent ke){}
-                public void keyPressed(KeyEvent ke){}
         }
     
         /** Class Constructor */
