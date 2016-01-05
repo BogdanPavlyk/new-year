@@ -40,7 +40,7 @@ public class Window extends JFrame
                 setFocusable(true);
                 
                 /** Set window size and position and title */
-                setBounds(0,0,800,600);
+                setBounds(0,0,817,637);
                 setTitle("The Game: New Year Rush");
                 
                 /** 
