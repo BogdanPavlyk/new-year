@@ -51,7 +51,7 @@ public class Window extends JFrame
         }
     
         /** Class Constructor */
-        public Window()
+        public Window(int difficulty)
         {
                 /** 
                  * Connect the event handler for the keyboard to the window.
@@ -67,7 +67,7 @@ public class Window extends JFrame
                 /** 
                  * Create an object of the playing field and
                  * put panel - playing field in the window */
-                gameField = new Field();
+                gameField = new Field(difficulty);
                 Container container = getContentPane();
                 container.add(gameField);
                 

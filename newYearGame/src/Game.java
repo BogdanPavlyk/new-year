@@ -24,7 +24,7 @@ public class Game
             if((difficulty >= 1)&&(difficulty <= 7))
             {
                     /** Creating the window, that holds game-field */
-                    Window window = new Window();                   
+                    Window window = new Window(difficulty);                   
             }                   
     }
 }

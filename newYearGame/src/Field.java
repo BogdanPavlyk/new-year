@@ -15,23 +15,39 @@ public class Field extends JPanel
 		private Image hat;
 		private Image background;
 		public int hatCoord = 380;
+                private int difficulty;
+                private Gift[] gameGift; //Array of gifts.
 				
 		/** Class  Constructor */
-		public Field()
+		public Field(int difficulty)
 		{
-                  
-			try
+                        this.difficulty = difficulty;  
+                        
+                        try
 			{
-				hat = ImageIO.read(new File("c:\\img\\shapka.png"));
+				hat = 
+                                ImageIO.read(new File("c:\\img\\shapka.png"));
 			}
 			catch(IOException ex){}
 				
 			try
 			{
-				background = ImageIO.read(new File("c:\\img\\fon.png"));
+				background = 
+                                ImageIO.read(new File("c:\\img\\fon.png"));
 			}
 			catch(IOException ex){}
-				
+                        
+                        gameGift = new Gift[7];
+                        for (int i = 0; i < 7; i++)
+                        {
+                            try
+                            {
+                                gameGift[i] = new Gift(
+                                ImageIO.read(new File("c:\\p"+i+".png")));
+                            }
+                            catch(IOException ex){}
+                        }
+                       				
 			/**
 			 * Create a timer that will redraw the playing field
 			 * 20 times a second
