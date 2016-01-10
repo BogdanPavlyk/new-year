@@ -15,6 +15,8 @@ public class Window extends JFrame
     
         /** Private variable - game-field */
         private Field gameField;
+        /** Variable that holds game difficulty */
+        private int difficulty;
     
         /** The event handler of pressing the key */
         private class MyKey implements KeyListener
@@ -53,6 +55,8 @@ public class Window extends JFrame
         /** Class Constructor */
         public Window(int difficulty)
         {
+                this.difficulty = difficulty;
+                
                 /** 
                  * Connect the event handler for the keyboard to the window.
                  * Set the window to the active state.

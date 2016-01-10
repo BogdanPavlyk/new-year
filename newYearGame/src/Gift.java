@@ -12,7 +12,7 @@ import java.awt.event.*;
  * @version 1.0
  */
 public class Gift {
-        private Image image; // the image of the gift
+        public Image image; // the image of the gift
         public int x, y; // x - left margin, y - top margin
         public Boolean active; // if gift is on the field or not
         private Timer timerUpdate; // timer responsible for movement of the gift
