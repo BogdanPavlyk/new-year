@@ -14,7 +14,7 @@ public class Gift {
     public Image image; // the image of the gift
     public int x, y; // x - left margin, y - top margin
     public Boolean active; // if gift is on the field or not
-    Timer timerUpdate; // timer responsible for movement of the gift
+    private Timer timerUpdate; // timer responsible for movement of the gift
 
     /**
      * Class Constructor
@@ -23,7 +23,7 @@ public class Gift {
         /**
          * Create a timer that is responsible for movement of the gift.
          */
-        timerUpdate = new Timer(500, new ActionListener() {
+        timerUpdate = new Timer(200, new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 goDown();
@@ -59,9 +59,9 @@ public class Gift {
     public void goDown() {
         if (active == true) // if gift is active on the field
         {
-            y += 6;
+            y += 36;
         }
-        if ((y + image.getHeight(null) >= 470)) // if gift has reached bottom
+        if ((y + image.getHeight(null) >= 450)) // if gift has reached bottom
         {
             timerUpdate.stop();
         }

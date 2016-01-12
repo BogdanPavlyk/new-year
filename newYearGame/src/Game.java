@@ -1,5 +1,5 @@
 
-import javax.swing.JOptionPane;
+import javax.swing.*;
 
 /**
  * Main class of the game.

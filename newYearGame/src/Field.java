@@ -14,11 +14,11 @@ public class Field extends JPanel {
 
     private Image hat;
     private Image background;
-    public int hatCoord = 400;
+    public int hatCoord = 365;
     private int difficulty;
     private Gift[] gameGift; //Array of gifts.
     private Image endGameImage; //The image of the game ending.
-    public Timer timerUpdate, timerDraw; //Timers.
+    private Timer timerUpdate, timerDraw; //Timers.
 
     /**
      * Class Constructor
@@ -57,8 +57,8 @@ public class Field extends JPanel {
          * Create a timer that will check and add gifts on the playing field 1
          * time per 3 seconds
          */
-        Timer timerUpdate
-                = new Timer(3000, new ActionListener() {
+        timerUpdate
+                = new Timer(1000, new ActionListener() {
                     public void actionPerformed(ActionEvent ae) {
                         updateStart();
                     }
@@ -69,7 +69,7 @@ public class Field extends JPanel {
         /**
          * Create a timer that will redraw the playing field 20 times a second
          */
-        Timer timerDraw
+        timerDraw
                 = new Timer(50, new ActionListener() {
                     public void actionPerformed(ActionEvent ae) {
                         repaint();
@@ -100,10 +100,10 @@ public class Field extends JPanel {
                 // If Gift has reached botom border.
                 if ((gameGift[i].y
                         + gameGift[i].image.getHeight(null))
-                        >= 470) {
+                        >= 450) {
                     if (Math.abs(gameGift[i].x - hatCoord)
                             > 75) {
-                        gr.drawImage(endGameImage, 300, 300, null);
+                        gr.drawImage(endGameImage, 300, 250, null);
                         timerDraw.stop();
                         timerUpdate.stop();
                         break;
