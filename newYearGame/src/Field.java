@@ -28,19 +28,19 @@ public class Field extends JPanel {
 
         try {
             hat
-                    = ImageIO.read(new File("c:\\img\\shapka.png"));
+                    = ImageIO.read(new File("./img\\shapka.png"));
         } catch (IOException ex) {
         }
 
         try {
             background
-                    = ImageIO.read(new File("c:\\img\\fon.png"));
+                    = ImageIO.read(new File("./img\\fon.png"));
         } catch (IOException ex) {
         }
 
         try {
             endGameImage
-                    = ImageIO.read(new File("c:\\img\\end_game.png"));
+                    = ImageIO.read(new File("./img\\end_game.png"));
         } catch (IOException ex) {
         }
 
@@ -48,7 +48,7 @@ public class Field extends JPanel {
         for (int i = 0; i < 7; i++) {
             try {
                 gameGift[i] = new Gift(
-                        ImageIO.read(new File("c:\\img\\p" + i + ".png")));
+                      ImageIO.read(new File("./img\\p" + i + ".png")));
             } catch (IOException ex) {
             }
         }
@@ -58,7 +58,7 @@ public class Field extends JPanel {
          * time per 3 seconds
          */
         timerUpdate
-                = new Timer(1000, new ActionListener() {
+                = new Timer(1500, new ActionListener() {
                     public void actionPerformed(ActionEvent ae) {
                         updateStart();
                     }
@@ -112,10 +112,10 @@ public class Field extends JPanel {
                     }
                 }
             }
-
-        }
+            
+        }       
     }
-
+    
     /**
      * Method that checks and adds gifts on the game field
      */

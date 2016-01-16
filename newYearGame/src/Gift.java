@@ -59,7 +59,7 @@ public class Gift {
     public void goDown() {
         if (active == true) // if gift is active on the field
         {
-            y += 36;
+            y += 16;
         }
         if ((y + image.getHeight(null) >= 450)) // if gift has reached bottom
         {
